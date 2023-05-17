@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team SPS</title>
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.*/css/pico.min.css">
+</head>
+
+<body>
+    <main class="container" style="padding-top: 40px; padding-bottom: 10px;">
+        <header style="padding: 20px;">
+            <h1>View Graph</h1>
+        </header>
+        <div class="grid">
+            <div>{{ graph_html_1|safe }}
+                <details>
+                    <summary role="button" class="contrast">Graph 1</summary>
+                    <ul>
+                        <li>설명1</li>
+                        <li>설명2</li>
+                    </ul>
+                </details>
+            </div>
+            <div>{{ graph_html_2|safe }}
+                <details>
+                    <summary role="button" class="secondary">Graph 2</summary>
+                    <ul>
+                        <li>설명1</li>
+                        <li>설명2</li>
+                    </ul>
+                </details>
+            </div>
+        </div>
+    </main>
+    <main class="container" style="padding-top: 40px; padding-bottom: 40px;">
+        <div class="grid">
+            <div>{{ graph_html_3|safe }}
+                <details>
+                    <summary>Grape 3</summary>
+                    <ul>
+                        <li>설명1</li>
+                        <li>설명2</li>
+                    </ul>
+                </details>
+            </div>
+            <div>{{ graph_html_4|safe }}
+                <details>
+                    <summary>Grape 4</summary>
+                    <ul>
+                        <li>설명1</li>
+                        <li>설명2</li>
+                    </ul>
+                </details>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

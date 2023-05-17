@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prac</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+</head>
+
+<body>
+    <main class="container">
+        <header>
+            <h1>Pracice</h1>
+        </header>
+        <figure>
+            <table role="grid">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Heading</th>
+                        <th scope="col">Heading</th>
+                        <th scope="col">Heading</th>
+                        <th scope="col">Heading</th>
+                        <th scope="col">Heading</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th scope="col">#</th>
+                        <td scope="col">Total</td>
+                        <td scope="col">Total</td>
+                        <td scope="col">Total</td>
+                        <td scope="col">Total</td>
+                        <td scope="col">Total</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </figure>
+        <details>
+            <summary>Open and Close</summary>
+            <ul>
+                <li>Accordion 1 Test</li>
+                <li>Accordion 2 Test</li>
+                <li><img src="../static/images/img.png" alt="이미지" width="300" height="300" /></li>
+            </ul>
+        </details>
+        <details role="list">
+            <summary aria-haspopup="listbox" role="button" class="contrast">
+                Dropdown as a button 3
+            </summary>
+            <ul role="listbox">
+                <li><a href="{{url1}}">Go to Home</a></li>
+                <li><a href="{{url2}}">Go to data1</a></li>
+                <li><a href="{{url3}}">Go to data2</a></li>
+            </ul>
+        </details>
+        <article>
+            <header>Subject</header>
+            Contains1<br>
+            Contains2<br>
+            Contains3<br>
+            <footer>End</footer>
+        </article>
+        <a href="{{url1}}" role="button" style="float: right;">home</a>
+    </main>
+</body>
+
+</html>
