@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team SPS</title>
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.*/css/pico.min.css">
+</head>
+
+<body>
+    <main class="container" style="padding-top: 40px; padding-bottom: 10px;">
+        <header style="padding: 20px;">
+            <h1>Polynomial Graph</h1>
+        </header>
+        <div class="grid">
+            <div>{{ graph_html_1|safe }}</div>
+        </div>
+    </main>
+    <main class="container" style="padding-top: 40px; padding-bottom: 40px;">
+        <div class="grid">
+            <div>{{ graph_html_2|safe }}</div>
+            <div>{{ graph_html_3|safe }}</div>
+        </div>
+    </main>
+    <main class="container" style="padding-top: 40px; padding-bottom: 40px;">
+        <div class="grid">
+            <div>{{ graph_html_4|safe }}</div>
+            <div>{{ graph_html_5|safe }}</div>
+        </div>
+    </main>
+    <main class="container" style="padding-top: 40px;">
+        <a href="{{url1}}" role="button" style="float: right;">Next</a>
+    </main>
+</body>
+
+</html>
