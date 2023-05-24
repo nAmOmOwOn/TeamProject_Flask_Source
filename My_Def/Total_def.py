@@ -3,6 +3,7 @@ import numpy as np
 import plotly.express as px
 import plotly.graph_objects as go
 import plotly.figure_factory as ff
+import plotly.subplots as sp
 from sklearn.linear_model import LinearRegression
 from sklearn.preprocessing import PolynomialFeatures
 import scipy.stats # 상관관계 분석 import
@@ -44,27 +45,25 @@ def Polynomial_graph(filename, degree):
     X_range_poly = poly_reg.transform(x_range.reshape(-1, 1))
     y_range = lin_reg.predict(X_range_poly)
 
-    fig = px.scatter(x=X.flatten(), y=y, opacity=0.65)
-    fig.add_traces(go.Scatter(x=x_range,
-                            y=y_range
-                            , name='Polynomial Fit')
-                            )
-    fig.add_trace(go.Scatter(
-    x=X.flatten(),
-    y=y,
-    mode='markers',
-    name='Value',
-    marker=dict(
-        color='blue',opacity=0.5  # 원하는 색상으로 변경
-    )
-))
+    # 등락률 계산
+    y_diff = np.diff(y)  # 이전 값과의 차이 계산
+    y_rate = (y_diff / y[:-1]) * 100  # 등락률 계산 (백분율)
+
+    fig = sp.make_subplots(rows=2, cols=1, shared_xaxes=True, row_heights=[0.8, 0.2])
+    
+    colors = ['blue' if rate < 0 else 'red' for rate in y_rate]
+
+    fig.add_trace(go.Scatter(x=X.flatten(), y=y, mode='markers', marker=dict(color='green'), opacity=0.65, name='Value'), row=1, col=1)
+    fig.add_trace(go.Scatter(x=x_range, y=y_range, name='Polynomial Fit'), row=1, col=1)
+    fig.add_trace(go.Bar(x=X[:-1].flatten(), y=y_rate, name='등락률', marker=dict(color=colors, opacity=0.5)), row=2, col=1)
 
     fig.update_layout(
         title='Polynomial Model {}'.format(filename),
-        xaxis_title='date',
+        # xaxis_title='date',
         yaxis_title='value',
         autosize=True
     )
+
     return fig
 
 
@@ -207,6 +206,5 @@ def spicy_graph_avg(index_values, value_values):
 
     # Plot!
     return fig
-
 
 
