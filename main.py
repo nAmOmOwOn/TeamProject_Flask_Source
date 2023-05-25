@@ -29,12 +29,13 @@ Data1 = anal_scipy(UK_data_df, KS200_data_df, OIL_data_df, CD91_data_df)
 Data2 = anal_scipy(UK_df, KS200_df, OIL_df, CD91_df)
 
 for x in range(len(anal_scipy(UK_df, KS200_df, OIL_df, CD91_df))):
-    Statistic_avg.append((Data1[x][1][0] * (95/100)) + (Data2[x][1][0] * (5/100)))
+    Statistic_avg.append((Data1[x][1][0] * (5/100)) + (Data2[x][1][0] * (95/100)))
     Statistic_index.append(Data1[x][0])
 
 
-Standard_index = UK_df, KS200_df, CD91_df
-Standard_predict_index = UK_data_df, KS200_data_df, CD91_data_df
+
+Standard_index = UK_df, KS200_df, CD91_df, OIL_df
+Standard_predict_index = UK_data_df, KS200_data_df, CD91_data_df, OIL_data_df
 
 
 Standard_result = []
